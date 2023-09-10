@@ -1,5 +1,6 @@
 'use client'
 import React, { useState } from 'react';
+import './globals.css';
 import { ItemsContext } from '../contexts/ItemsContext';
 import ItemsService from '../service/ItemsService';
 import { Item } from '../types/types';
