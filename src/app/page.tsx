@@ -5,6 +5,7 @@ import { ItemsContext } from '../contexts/ItemsContext';
 import ItemsService from '../service/ItemsService';
 import { ItemType } from '../types/types';
 import Search from '../search/Search';
+import ItemList from '../itemList/ItemList';
 import { FilteredItemsContext } from '../contexts/FilteredItemsContext';
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
         <FilteredItemsContext.Provider value={{ items: filteredItems, setItems: setFilteredItems }}>
           <ItemsService />
           <Search />
+          <ItemList />
         </FilteredItemsContext.Provider>
       </ItemsContext.Provider>
     </div>
