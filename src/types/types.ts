@@ -1,4 +1,4 @@
-export type Item = {
+export type ItemType = {
     title: string;
     description: string;
     price: string;
@@ -8,4 +8,4 @@ export type Item = {
     // favorite?: boolean;
 }
 
-export type ItemContextType = { items: Array<Item>, setItems: Function }
+export type ItemContextType = { items: Array<ItemType>, setItems: Function }

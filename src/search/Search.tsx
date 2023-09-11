@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { ItemsContext } from '../contexts/ItemsContext';
 import { ITEM_FILTER_PARAMS } from '../constants';
 import { FilteredItemsContext } from '../contexts/FilteredItemsContext';
-import { Item } from '../types/types';
+import { ItemType } from '../types/types';
 
 export default function Search() {
     const { items } = useContext(ItemsContext)
@@ -10,7 +10,7 @@ export default function Search() {
 
     const search = (event: { target: { value: any; }; }) => {
         const searchQuery = event.target.value.toLowerCase()
-        let filteredItemsList: Item[] = [];
+        let filteredItemsList: ItemType[] = [];
 
         items.forEach(item => {
             let bool = false;
