@@ -1,0 +1,31 @@
+@layer components {
+    .item-card {
+        @apply p-4 m-4 max-w-sm items-center border-2 rounded border-fake-black bg-white;
+        transition: 0.3s ease-in-out;
+    }
+
+    .item-card:hover {
+        opacity: 0.9;
+        box-shadow: 5px 5px 5px rgba(126, 126, 126, 0.5);
+    }
+
+    .item-image {
+        @apply w-full rounded mb-2
+    }
+
+    .item-title {
+        @apply text-2xl mt-3;
+        font-weight: 500;
+    }
+
+    .item-price {
+        @apply text-3xl my-2;
+        font-weight: 600;
+    }
+
+    .item-email {
+        @apply text-sm pt-3;
+        opacity: 0.6;
+    }
+
+}

@@ -1,9 +1,15 @@
 @layer components {
     .search {
-        @apply pt-16 m-4 max-w-screen-lg w-full items-center
+        @apply pt-16 m-4 max-w-screen-lg w-full items-center;
     }
 
-    .searchBar {
+    .search-bar {
         @apply p-2 w-full border-2 rounded border-fake-black;
+        transition: 0.3s ease-in-out;
+    }
+
+    .search-bar:hover {
+        opacity: 0.9;
+        box-shadow: 5px 5px 5px rgba(126, 126, 126, 0.5);
     }
 }

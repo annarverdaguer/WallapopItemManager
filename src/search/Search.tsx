@@ -33,16 +33,12 @@ export default function Search() {
     return (
         <div className="search">
             <input
-                className='searchBar'
+                className='search-bar'
                 type='search'
                 placeholder='Type to search...'
                 inputMode='search'
                 name='search'
                 onChange={search} />
-
-            <ul>
-                {filteredItems.items.map(item => <li>{item.title}</li>)}
-            </ul>
         </div>
 
     )
