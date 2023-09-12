@@ -1,6 +1,6 @@
 @layer components {
     .item-list {
-        @apply pt-4 m-4 max-w-screen-lg items-center flex flex-wrap
+        @apply pt-4 m-4 max-w-screen-lg items-center flex flex-wrap 
     }
 
 }
