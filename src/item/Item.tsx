@@ -1,5 +1,5 @@
 import { ItemType } from '../types/types';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { FavoritesItemsContext } from '@/contexts/FavoritesItemsContext';
 
 type itemProps = {

@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import Item from '../item/Item';
 import { FilteredItemsContext } from '@/contexts/FilteredItemsContext';
 import { FavoritesItemsContext } from '@/contexts/FavoritesItemsContext';
