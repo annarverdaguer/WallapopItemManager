@@ -1,6 +1,6 @@
 @layer components {
     .item-card {
-        @apply p-4 m-4 max-w-sm items-center border-2 rounded border-fake-black bg-white;
+        @apply p-4 m-4 max-w-sm items-center border-2 rounded border-fake-black bg-white flex flex-wrap;
         transition: 0.3s ease-in-out;
     }
 
@@ -14,7 +14,7 @@
     }
 
     .item-title {
-        @apply text-2xl mt-3;
+        @apply text-2xl mt-3 w-8/12;
         font-weight: 500;
     }
 
@@ -26,6 +26,15 @@
     .item-email {
         @apply text-sm pt-3;
         opacity: 0.6;
+    }
+
+    .item-favorite {
+        @apply p-2 mt-3 w-4/12 text-right text-2xl;
+        transition: 0.3s ease-in-out;
+    }
+
+    .item-favorite:hover {
+        opacity: 0.9;
     }
 
 }

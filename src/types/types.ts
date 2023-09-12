@@ -4,8 +4,6 @@ export type ItemType = {
     price: string;
     email: string;
     image: string;
-    // meetsSearchQuery?: boolean;
-    // favorite?: boolean;
 }
 
 export type ItemContextType = { items: Array<ItemType>, setItems: Function }
