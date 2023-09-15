@@ -5,7 +5,7 @@ import { ItemsContext } from '../contexts/ItemsContext';
 export default function Item({ title, description, price, email, image, fav }: ItemType) {
     const items = useContext(ItemsContext)
     const [isFav, setIsFav] = useState(fav)
-    useEffect(() => { setIsFav(fav) }, [])
+    useEffect(() => { setIsFav(fav) }, [fav])
 
     function updateFavParam(bool: boolean) {
         const updatedItems = items.items.map(item => {
@@ -19,7 +19,7 @@ export default function Item({ title, description, price, email, image, fav }: I
     }
 
     return (
-        <div className="item-card">
+        <div className="item-card" key={`item-card-for-${title}`}>
             <img src={image} alt={title} className="item-image" />
             <h3 className='item-title'>{title}</h3>
             {isFav ? <button className='item-favorite' onClick={() => updateFavParam(false)}>💖</button> : <button className='item-favorite' onClick={() => updateFavParam(true)}>🖤</button>}
