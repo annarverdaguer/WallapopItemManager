@@ -7,6 +7,7 @@ import { ItemType } from '../types/types';
 import Search from '../search/Search';
 import ItemList from '../itemList/ItemList';
 import { FilteredItemsContext } from '../contexts/FilteredItemsContext';
+import Header from '@/header/Header';
 
 export default function Home() {
   const [items, setItems] = useState(Array<ItemType>);
@@ -17,6 +18,7 @@ export default function Home() {
       <ItemsContext.Provider value={{ items: items, setItems: setItems }}>
         <FilteredItemsContext.Provider value={{ items: filteredItems, setItems: setFilteredItems }}>
           <ItemsService />
+          <Header />
           <Search />
           <ItemList />
         </FilteredItemsContext.Provider>

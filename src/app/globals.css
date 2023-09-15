@@ -1,7 +1,9 @@
 @import './App.css';
+@import '../header/Header.css';
 @import '../search/Search.css';
 @import '../itemList/ItemList.css';
 @import '../item/Item.css';
+@import '../modal/Modal.css';
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
