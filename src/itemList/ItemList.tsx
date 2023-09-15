@@ -1,22 +1,17 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import Item from '../item/Item';
 import { FilteredItemsContext } from '@/contexts/FilteredItemsContext';
-import { FavoritesItemsContext } from '@/contexts/FavoritesItemsContext';
-import { ItemType } from '@/types/types';
 
 export default function ItemList() {
     const filteredItems = useContext(FilteredItemsContext)
-    const favoriteItems = useContext(FavoritesItemsContext)
 
-    function renderItem(item: ItemType) {
-        let bool = false
-        if (favoriteItems.items.includes(item)) { bool = true }
-        return <Item item={item} favorite={bool} />
-    }
+    useEffect(() => {
+        filteredItems.items.map((item) => <Item title={item.title} description={item.description} price={item.price} email={item.email} image={item.image} fav={item.fav} />)
+    }, [filteredItems])
 
     return (
         <div className="item-list">
-            {filteredItems.items.map((item) => renderItem(item))}
+            {filteredItems.items.map((item) => <Item title={item.title} description={item.description} price={item.price} email={item.email} image={item.image} fav={item.fav} />)}
         </div>
     )
 }
