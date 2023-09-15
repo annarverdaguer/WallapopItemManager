@@ -1,6 +1,6 @@
 @layer components {
     .search {
-        @apply pt-16 m-4 max-w-screen-lg w-full items-center;
+        @apply m-4 max-w-screen-lg w-full items-center;
     }
 
     .search-bar {
