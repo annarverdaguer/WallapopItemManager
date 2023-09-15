@@ -3,6 +3,7 @@
 @import '../search/Search.css';
 @import '../itemList/ItemList.css';
 @import '../item/Item.css';
+@import '../favoriteItem/FavoriteItem.css';
 @import '../modal/Modal.css';
 @import "tailwindcss/base";
 @import "tailwindcss/components";
