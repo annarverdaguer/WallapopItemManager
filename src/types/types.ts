@@ -4,7 +4,9 @@ export type ItemType = {
     price: string;
     email: string;
     image: string;
-    fav: boolean;
+    isInSearchQuery: boolean;
+    isFav: boolean;
 }
 
 export type ItemContextType = { items: Array<ItemType>, setItems: Function }
+
