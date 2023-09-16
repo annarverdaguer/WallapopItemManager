@@ -2,20 +2,17 @@ import { ItemType } from '../types/types';
 import { useContext, useEffect, useState } from 'react';
 import { ItemsContext } from '../contexts/ItemsContext';
 
-export default function Item({ title, description, price, email, image, fav }: ItemType) {
+export default function Item({ title, description, price, email, image, isFav }: ItemType) {
     const items = useContext(ItemsContext)
-    const [isFav, setIsFav] = useState(fav)
-    useEffect(() => { setIsFav(fav) }, [fav])
 
     function updateFavParam(bool: boolean) {
         const updatedItems = items.items.map(item => {
             if (item.title === title) {
-                return { ...item, fav: bool };
+                return { ...item, isFav: bool };
             }
             return item;
         });
         items.setItems(updatedItems)
-        setIsFav(bool)
     }
 
     return (

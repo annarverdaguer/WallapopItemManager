@@ -14,7 +14,7 @@ export default function Modal({ isOpen = false, onModalClose }: IModalProps) {
         return null;
     }
     document.body.style.overflow = 'hidden';
-    const favItemsList = items.items.filter(item => { return item.fav === true });
+    const favItemsList = items.items.filter(item => { return item.isFav });
 
     return (
         <div className="modal-outside-background">

@@ -1,13 +1,14 @@
 import { useContext } from 'react';
 import Item from '../item/Item';
-import { FilteredItemsContext } from '@/contexts/FilteredItemsContext';
+import { ItemsContext } from '@/contexts/ItemsContext';
 
 export default function ItemList() {
-    const filteredItems = useContext(FilteredItemsContext)
+    const { items } = useContext(ItemsContext)
+    const filteredItems = items.filter((item) => { return item.isInSearchQuery })
 
     return (
         <div className="item-list">
-            {filteredItems.items.map((item) => <Item title={item.title} description={item.description} price={item.price} email={item.email} image={item.image} fav={item.fav} />)}
+            {filteredItems.map((item) => <Item title={item.title} description={item.description} price={item.price} email={item.email} image={item.image} isFav={item.isFav} isInSearchQuery={item.isInSearchQuery} />)}
         </div>
     )
 }

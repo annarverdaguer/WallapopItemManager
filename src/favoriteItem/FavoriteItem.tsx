@@ -7,7 +7,7 @@ export default function FavoriteItem({ title, image }: any) {
     function removeFromFavsList() {
         const updatedItems = items.items.map(item => {
             if (item.title === title) {
-                return { ...item, fav: false };
+                return { ...item, isFav: false };
             }
             return item;
         });
