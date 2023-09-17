@@ -3,14 +3,21 @@ import Item from '../item/Item';
 import { ItemsContext } from '@/contexts/ItemsContext';
 import { ITEM_FILTER_PARAMS } from '@/constants';
 import { ItemType } from '@/types/types';
+import Paginate from '@/pagination/Paginate';
 
 export default function ItemList() {
     const { items } = useContext(ItemsContext)
     const [activeSortingCriteria, setActiveSortingCriteria] = useState(String)
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postsPerPage] = useState(5);
+
     const filteredItems = items.filter((item) => { return item.isInSearchQuery })
+    const indexOfLastPost = currentPage * postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - postsPerPage;
 
     function handleClick(param: keyof ItemType) {
-        setActiveSortingCriteria(param)
+        setActiveSortingCriteria(param);
+        paginate(1);
     }
 
     function sortBy(items: ItemType[], sortingCriteria: keyof ItemType) {
@@ -34,16 +41,31 @@ export default function ItemList() {
         if (sortingCriteria) {
             sortedItems = sortBy(items, sortingCriteria);
         }
-        return items.map((item: ItemType) => <Item title={item.title} description={item.description} price={item.price} email={item.email} image={item.image} isFav={item.isFav} isInSearchQuery={item.isInSearchQuery} />)
+        const paginatedAndSortedItems = sortedItems.slice(indexOfFirstPost, indexOfLastPost);
+        return paginatedAndSortedItems.map((item: ItemType) => <Item title={item.title} description={item.description} price={item.price} email={item.email} image={item.image} isFav={item.isFav} isInSearchQuery={item.isInSearchQuery} />)
 
+    }
+
+    function paginate(pageNUmber: number) {
+        setCurrentPage(pageNUmber);
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
     }
 
     return (
         <div className="item-list">
-            <div className='item-list-sorting-bar'>Sort by:
+            <div className='item-list-sorting-bar'>
+                <p className='item-list-sorting-text'>Sort by:</p>
                 {renderButtons()}
             </div>
-            {renderSortedItems(filteredItems, activeSortingCriteria)}
+            <div className='item-list-items'>
+                {renderSortedItems(filteredItems, activeSortingCriteria)}
+            </div>
+            <div className='item-list-pagination'>
+                <Paginate postsPerPage={postsPerPage} totalPosts={filteredItems.length} paginate={paginate} currentPage={currentPage} />
+            </div>
         </div>
     )
 }
