@@ -4,7 +4,7 @@ export type ItemType = {
     price: string;
     email: string;
     image: string;
-    isInSearchQuery: boolean;
+    isInSearchQuery?: boolean;
     isFav: boolean;
 }
 
