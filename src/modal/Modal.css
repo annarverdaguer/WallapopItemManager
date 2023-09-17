@@ -43,4 +43,16 @@
     .modal-title {
         @apply text-3xl;
     }
+
+
+    @media (max-width: 992px) {
+        .modal-inside-background {
+            @apply min-w-full max-w-screen-sm;
+
+        }
+
+        .modal-title {
+            @apply text-xl;
+        }
+    }
 }
