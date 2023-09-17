@@ -1,5 +1,5 @@
 
-interface IPaginationProps {
+export type IPaginationProps = {
     postsPerPage: number;
     totalPosts: number;
     paginate: Function;
