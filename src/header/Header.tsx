@@ -12,7 +12,8 @@ export default function Header() {
     return (
         <div className="header">
             <h1 className="header-title">✨ Item Manager ✨</h1>
-            <button className="header-fav-button" onClick={() => { setIsModalOpen(true) }}>Favs 💖</button>
+            <button className="header-fav-button lg-view" onClick={() => { setIsModalOpen(true) }}>Favs 💖</button>
+            <button className="header-fav-button sm-view" onClick={() => { setIsModalOpen(true) }}>💖</button>
             <Modal isOpen={isModalOpen} onModalClose={onModalClose} />
         </div>
     )
