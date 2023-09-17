@@ -1,20 +1,22 @@
 @layer components {
     .item-list {
-        @apply m-4 max-w-screen-lg items-center flex flex-wrap 
+        @apply m-4 max-w-screen-lg;
+    }
+
+    .item-list-items {
+        @apply flex flex-wrap justify-between items-center;
+        max-width: 840px;
     }
 
     .item-list-sorting-bar{
-        @apply block w-full pb-4;
+        @apply flex w-full pb-4 justify-start align-baseline;
     }
 
-    .item-list-sorting-button {
-        @apply mx-2 py-1 px-3 bg-primary-color rounded border-fake-black border-2;
-        text-transform: capitalize;
-        transition: 0.3s ease-in-out;
+    .item-list-sorting-text {
+        @apply pt-1;
     }
-        
-    .item-list-sorting-button:hover {
-        opacity: 0.8;
-        box-shadow: 5px 5px 5px rgba(126, 126, 126, 0.2);
+
+    .item-list-pagination {
+        @apply mb-12 mt-6;
     }
 }

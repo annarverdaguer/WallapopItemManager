@@ -1,0 +1,9 @@
+@layer components {
+    .pagination-container {
+        @apply justify-center flex items-center;
+    }
+
+    .pagination {
+        @apply mx-auto;
+    }
+}

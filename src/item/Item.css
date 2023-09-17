@@ -9,8 +9,12 @@
         box-shadow: 5px 5px 5px rgba(126, 126, 126, 0.5);
     }
 
+    .item-image-wrapper {
+        @apply w-full justify-center;
+    }
+
     .item-image {
-        @apply w-full rounded mb-2
+        @apply rounded mb-2 mx-auto;
     }
 
     .item-title {
