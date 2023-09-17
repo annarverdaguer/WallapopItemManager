@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { ItemsContext } from '../contexts/ItemsContext';
 import FavoriteItem from '@/favoriteItem/FavoriteItem';
+import EmptyList from '@/emptyList/EmptyList';
 
 interface IModalProps {
     isOpen: boolean;
@@ -20,11 +21,13 @@ export default function Modal({ isOpen = false, onModalClose }: IModalProps) {
         <div className="modal-outside-background">
             <div className="modal-inside-background">
                 <div className='modal-header-section'>
-                    <h2 className='modal-title'>Your favorite items:</h2>
+                    <h2 className='modal-title'>Your favorite items</h2>
                     <button className="modal-close-button" onClick={onModalClose}>X</button>
                 </div>
                 <div>
-                    {favItemsList.map((item) => <FavoriteItem title={item.title} image={item.image} />)}
+                    {favItemsList.length > 0 ?
+                        favItemsList.map((item) => <FavoriteItem title={item.title} image={item.image} />) :
+                        <EmptyList message="You don't have any favorite items 😢 Go and spread some love! 💖" />}
                 </div>
             </div>
         </div>

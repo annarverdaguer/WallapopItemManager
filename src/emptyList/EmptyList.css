@@ -1,0 +1,5 @@
+@layer components {
+    .empty-list {
+        @apply mt-8 mb-4;
+    }
+}

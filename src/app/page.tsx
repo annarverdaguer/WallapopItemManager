@@ -7,6 +7,7 @@ import { ItemType } from '../types/types';
 import Search from '../search/Search';
 import ItemList from '../itemList/ItemList';
 import Header from '@/header/Header';
+import EmptyList from '@/emptyList/EmptyList';
 
 export default function Home() {
   const [items, setItems] = useState(Array<ItemType>);
@@ -17,7 +18,11 @@ export default function Home() {
         <ItemsService />
         <Header />
         <Search />
-        <ItemList />
+        {
+          items.filter((item) => { return item.isInSearchQuery }).length >= 1 ?
+            <ItemList /> :
+            <EmptyList message="🕵️‍♀️ Search for an item to use Item Manager! 🕵️‍♀️" />
+        }
       </ItemsContext.Provider>
     </div>
   )
