@@ -18,4 +18,25 @@
         opacity: 0.8;
         box-shadow: 5px 5px 5px rgba(126, 126, 126, 0.2);
     }
+
+    .lg-view {
+        display: inline-block;
+    }
+
+    .sm-view {
+        display: none;
+    }
+
+    @media (max-width: 992px) {
+        .header-title {
+            @apply text-xl;
+        }
+        .lg-view {
+            display: none;
+        }
+
+        .sm-view {
+            display: inline-block;
+        }
+    }
 }

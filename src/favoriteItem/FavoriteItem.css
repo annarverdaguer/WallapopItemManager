@@ -29,4 +29,11 @@
         opacity: 0.9;
     }
 
+    @media (max-width: 992px) {
+        .favorite-item-title {
+            @apply text-sm;
+            max-width: 60%;
+        }
+    }
+
 }

@@ -9,7 +9,7 @@
     }
 
     .item-list-sorting-bar{
-        @apply flex w-full pb-4 justify-start align-baseline;
+        @apply flex flex-wrap w-full pb-4 justify-start align-baseline;
     }
 
     .item-list-sorting-text {
@@ -18,5 +18,23 @@
 
     .item-list-pagination {
         @apply mb-12 mt-6;
+    }
+    
+    @media (max-width: 992px) {
+        .item-list {
+            @apply m-0 mt-2 min-w-full;
+        }
+
+        .item-list-items {
+            @apply min-w-full;
+        }
+        
+        .item-list-sorting-bar{
+            @apply text-sm;
+        }
+
+        .item-list-sorting-text {
+            @apply w-full mb-2;
+        }
     }
 }

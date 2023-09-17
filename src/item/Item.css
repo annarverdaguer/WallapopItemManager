@@ -42,4 +42,22 @@
         opacity: 0.9;
     }
 
+    @media (max-width: 992px) {
+        .item-title {
+            @apply text-lg;
+        }
+
+        .item-price {
+            @apply text-xl;
+        }
+        
+        .item-description {
+            @apply text-sm;
+        }
+
+        .item-email {
+            @apply text-xs;
+        }
+    }
+
 }
