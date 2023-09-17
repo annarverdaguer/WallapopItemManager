@@ -30,6 +30,12 @@ describe("<Item />", () => {
         expect(itemTitle.textContent).toBe("Your favorite mug")
     })
 
+    test('Verifying image is rendered', () => {
+        const itemCard = item.getByText('', { selector: '.item-card' });
+        const itemImage = itemCard.querySelector('.item-image');
+        expect(itemImage).toBeDefined();
+    })
+
     test('Verifying description is rendered and its content is as expected', () => {
         const itemCard = item.getByText('', { selector: '.item-card' });
         const itemDescription = itemCard.querySelector('.item-description');
