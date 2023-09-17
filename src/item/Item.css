@@ -31,6 +31,7 @@
     .item-favorite {
         @apply p-2 mt-3 w-4/12 text-right text-2xl;
         transition: 0.3s ease-in-out;
+        cursor: pointer;
     }
 
     .item-favorite:hover {

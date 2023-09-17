@@ -19,7 +19,7 @@ export default function Item({ title, description, price, email, image, isFav }:
         <div className="item-card" key={`item-card-for-${title}`}>
             <img src={image} alt={title} className="item-image" />
             <h3 className='item-title'>{title}</h3>
-            {isFav ? <button className='item-favorite' onClick={() => updateFavParam(false)}>💖</button> : <button className='item-favorite' onClick={() => updateFavParam(true)}>🖤</button>}
+            {isFav ? <a className='item-favorite' onClick={() => updateFavParam(false)}>💖</a> : <a className='item-favorite' onClick={() => updateFavParam(true)}>🖤</a>}
             <h4 className='item-price'>{price}€</h4>
             <p className='item-description'>{description}</p>
             <p className='item-email'>{email}</p>
