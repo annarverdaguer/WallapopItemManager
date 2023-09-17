@@ -2,10 +2,24 @@
     body {
         @apply text-fake-black font-mono;
     }
+    button {
+        @apply mx-2 py-1 px-3 bg-primary-color rounded border-fake-black border-2;
+        text-transform: capitalize;
+        transition: 0.3s ease-in-out;
+    }
+
+    button:hover {
+        opacity: 0.8;
+        box-shadow: 5px 5px 5px rgba(126, 126, 126, 0.2);
+    }
 }
 
 @layer components {
     .app {
         @apply p-6 flex min-h-screen flex-col items-center bg-broken-white;
+    }
+
+    .button-active {
+        @apply bg-secondary-color;
     }
 }

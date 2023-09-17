@@ -18,7 +18,7 @@ export default function FavoriteItem({ title, image }: any) {
         <div className="favorite-item-card" key={`favorite-item-card-for-${title}`}>
             <img src={image} alt={title} className="favorite-item-image" />
             <h3 className='favorite-item-title'>{title}</h3>
-            <button className='favorite-item-unfavorite' onClick={removeFromFavsList}>💔</button>
+            <a className='favorite-item-unfavorite' onClick={removeFromFavsList}>💔</a>
         </div>
     )
 }
