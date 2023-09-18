@@ -1,5 +1,5 @@
 import FavoriteItem from "./FavoriteItem"
-import { fireEvent, render, RenderResult } from "@testing-library/react"
+import { render, RenderResult } from "@testing-library/react"
 
 describe("<FavoriteItem />", () => {
     let favoriteItem: RenderResult<typeof import("@testing-library/dom/types/queries"), HTMLElement>;
