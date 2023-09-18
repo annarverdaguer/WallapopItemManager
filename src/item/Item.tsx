@@ -1,5 +1,5 @@
 import { ItemType } from '../types/types';
-import { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
 import { ItemsContext } from '../contexts/ItemsContext';
 
 export default function Item({ title, description, price, email, image, isFav }: ItemType) {
