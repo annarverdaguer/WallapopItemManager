@@ -6,6 +6,7 @@ export type ItemType = {
     image: string;
     isInSearchQuery?: boolean;
     isFav: boolean;
+    isInFavSearchQuery?: boolean;
 }
 
 export type ItemContextType = { items: Array<ItemType>, setItems: Function }

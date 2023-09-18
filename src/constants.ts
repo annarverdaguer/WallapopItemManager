@@ -10,8 +10,9 @@ export const TESTING_ARRAY_OF_ITEMS: ItemType[] = [
         price: "740",
         email: "iphonemail@wallapop.com",
         image: "https://frontend-tech-test-data.s3-eu-west-1.amazonaws.com/img/iphone.png",
-        isFav: false,
-        isInSearchQuery: true
+        isFav: true,
+        isInSearchQuery: true,
+        isInFavSearchQuery: true
     },
     {
         title: "Polaroid 635",
@@ -19,8 +20,9 @@ export const TESTING_ARRAY_OF_ITEMS: ItemType[] = [
         price: "50",
         email: "cameramail@wallapop.com",
         image: "https://frontend-tech-test-data.s3-eu-west-1.amazonaws.com/img/camera.png",
-        isFav: false,
-        isInSearchQuery: true
+        isFav: true,
+        isInSearchQuery: true,
+        isInFavSearchQuery: true
     },
     {
         title: "Bolso piel marca Hoss",
@@ -28,8 +30,9 @@ export const TESTING_ARRAY_OF_ITEMS: ItemType[] = [
         price: "250",
         email: "bagmail@wallapop.com",
         image: "https://frontend-tech-test-data.s3-eu-west-1.amazonaws.com/img/bag.png",
-        isFav: false,
-        isInSearchQuery: false
+        isFav: true,
+        isInSearchQuery: false,
+        isInFavSearchQuery: false
     },
     {
         title: "Reloj de Daniel Wellington",
@@ -38,7 +41,8 @@ export const TESTING_ARRAY_OF_ITEMS: ItemType[] = [
         email: "watchmail@wallapop.com",
         image: "https://frontend-tech-test-data.s3-eu-west-1.amazonaws.com/img/watch.png",
         isFav: false,
-        isInSearchQuery: false
+        isInSearchQuery: false,
+        isInFavSearchQuery: false
     },
     {
         title: "Coche antiguo americano",
@@ -47,7 +51,8 @@ export const TESTING_ARRAY_OF_ITEMS: ItemType[] = [
         email: "carmail@wallapop.com",
         image: "https://frontend-tech-test-data.s3-eu-west-1.amazonaws.com/img/car.png",
         isFav: false,
-        isInSearchQuery: false
+        isInSearchQuery: false,
+        isInFavSearchQuery: false
     },
     {
         title: "Barbacoa",
@@ -55,7 +60,8 @@ export const TESTING_ARRAY_OF_ITEMS: ItemType[] = [
         price: "120",
         email: "barbecue@wallapop.com",
         image: "https://frontend-tech-test-data.s3-eu-west-1.amazonaws.com/img/barbecue.png",
-        isFav: false,
-        isInSearchQuery: true
+        isFav: true,
+        isInSearchQuery: true,
+        isInFavSearchQuery: false
     }
 ]
