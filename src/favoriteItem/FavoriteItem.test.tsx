@@ -10,7 +10,7 @@ describe("<FavoriteItem />", () => {
             image: "https://www.pngall.com/wp-content/uploads/5/White-Coffee-Mug-PNG-Picture.png"
         }
 
-        favoriteItem = render(<FavoriteItem title={props.title} image={props.image} />);
+        favoriteItem = render(<FavoriteItem title={props.title} image={props.image} key={1} />);
     })
 
     test('Verifying favorite item is rendered', () => {

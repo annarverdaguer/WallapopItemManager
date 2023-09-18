@@ -1,7 +1,13 @@
 import { useContext } from 'react';
 import { ItemsContext } from '../contexts/ItemsContext';
 
-export default function FavoriteItem({ title, image }: any) {
+interface FavItemProps {
+    title: string,
+    image: string,
+    key: number
+}
+
+export default function FavoriteItem({ title, image }: FavItemProps) {
     const items = useContext(ItemsContext)
 
     function removeFromFavsList() {
@@ -15,7 +21,7 @@ export default function FavoriteItem({ title, image }: any) {
     }
 
     return (
-        <div className="favorite-item-card" key={`favorite-item-card-for-${title}`}>
+        <div className="favorite-item-card">
             <img src={image} alt={title} className="favorite-item-image" />
             <h3 className='favorite-item-title'>{title}</h3>
             <a className='favorite-item-unfavorite' onClick={removeFromFavsList}>💔</a>

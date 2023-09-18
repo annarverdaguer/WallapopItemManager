@@ -23,10 +23,10 @@ export default function FavoriteItemList() {
 
     function renderSearchedFavoriteItems() {
         if (filteredFavItemsList.length > 0) {
-            return filteredFavItemsList.map((item) => <FavoriteItem title={item.title} image={item.image} />)
+            return filteredFavItemsList.map((item, key) => <FavoriteItem title={item.title} image={item.image} key={key} />)
         }
         if (searchQuery === "") {
-            return favItemsList.map((item) => <FavoriteItem title={item.title} image={item.image} />)
+            return favItemsList.map((item, key) => <FavoriteItem title={item.title} image={item.image} key={key} />)
         }
         return (<EmptyList message="None of your favorite items are matching this query :(" />)
     }

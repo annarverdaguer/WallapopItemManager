@@ -11,3 +11,10 @@ export type ItemType = {
 
 export type ItemContextType = { items: Array<ItemType>, setItems: Function }
 
+export type SortingCriteriaType = {
+    title: string;
+    description: string;
+    price: string;
+    email: string;
+}
+

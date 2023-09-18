@@ -2,14 +2,13 @@ import { TESTING_ARRAY_OF_ITEMS } from "@/constants";
 import FavoriteItemList from "./FavoriteItemList"
 import { fireEvent, render, RenderResult } from "@testing-library/react"
 import { ItemsContext } from "@/contexts/ItemsContext";
-import setItems from "@/app/page"
 
 describe("<FavoriteItemList />", () => {
     let favoriteItemList: RenderResult<typeof import("@testing-library/dom/types/queries"), HTMLElement>;
 
     beforeEach(() => {
         favoriteItemList = render(
-            <ItemsContext.Provider value={{ items: TESTING_ARRAY_OF_ITEMS, setItems: setItems }}>
+            <ItemsContext.Provider value={{ items: TESTING_ARRAY_OF_ITEMS, setItems: () => { } }}>
                 <FavoriteItemList />
             </ItemsContext.Provider>);
     })
@@ -38,10 +37,6 @@ describe("<FavoriteItemList />", () => {
         const favoriteItemListWrap = favoriteItemList.getByText('', { selector: '.favorite-item-list' });
         const favoriteItemTitle = favoriteItemListWrap.querySelector('.favorite-item-title')?.textContent;
         expect(favoriteItemTitle).toBe('iPhone 6S Oro');
-
-    })
-
-    test('Verifying I can remove an item from the favs list', () => {
 
     })
 })

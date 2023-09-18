@@ -2,8 +2,14 @@ import { ItemType } from '../types/types';
 import { useContext } from 'react';
 import { ItemsContext } from '../contexts/ItemsContext';
 
-export default function Item({ title, description, price, email, image, isFav }: ItemType) {
+interface ItemProps {
+    item: ItemType,
+    key: number
+}
+
+export default function Item({ item }: ItemProps) {
     const items = useContext(ItemsContext)
+    const { title, description, price, email, image, isFav } = item;
 
     function updateFavParam(bool: boolean) {
         const updatedItems = items.items.map(item => {
@@ -16,7 +22,7 @@ export default function Item({ title, description, price, email, image, isFav }:
     }
 
     return (
-        <div className="item-card" key={`item-card-for-${title}`}>
+        <div className="item-card">
             <div className='item-image-wrapper'>
                 <img src={image} alt={title} className="item-image" />
             </div>

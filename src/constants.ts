@@ -1,7 +1,11 @@
-import { ItemType } from "./types/types";
+import { ItemType, SortingCriteriaType } from "./types/types";
 
 export const ITEMS_API = "https://frontend-tech-test-data.s3-eu-west-1.amazonaws.com/items.json"
-export const ITEM_FILTER_PARAMS = ['title' as keyof ItemType, 'description' as keyof ItemType, 'price' as keyof ItemType, 'email' as keyof ItemType];
+export const ITEM_FILTER_PARAMS = [
+    'title' as keyof SortingCriteriaType,
+    'description' as keyof SortingCriteriaType,
+    'price' as keyof SortingCriteriaType,
+    'email' as keyof SortingCriteriaType];
 
 export const TESTING_ARRAY_OF_ITEMS: ItemType[] = [
     {
