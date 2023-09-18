@@ -30,7 +30,7 @@
         }
         
         .item-list-sorting-bar{
-            @apply text-sm;
+            @apply text-xs;
         }
 
         .item-list-sorting-text {
