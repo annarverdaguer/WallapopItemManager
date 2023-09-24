@@ -8,21 +8,29 @@ import Search from '../search/Search';
 import ItemList from '../itemList/ItemList';
 import Header from '@/header/Header';
 import EmptyList from '@/emptyList/EmptyList';
+import { SearchQueriesContext } from '@/contexts/SearchQueriesContext';
 
 export default function Home() {
   const [items, setItems] = useState(Array<ItemType>);
+  const [queries, setQueries] = useState({ regular: "", favorite: "" });
+  const emptyQueryMessage = "🕵️‍♀️ Search for an item to use Item Manager! 🕵️‍♀️";
+  const noItemsMatchMessage = "📣 No items are matching this query. Please type something else. 📣"
+
+  let message = queries.regular.length > 0 ? noItemsMatchMessage : emptyQueryMessage;
 
   return (
     <div className="app">
       <ItemsContext.Provider value={{ items: items, setItems: setItems }}>
-        <ItemsService />
-        <Header />
-        <Search />
-        {
-          items.filter((item) => { return item.isInSearchQuery }).length >= 1 ?
-            <ItemList /> :
-            <EmptyList message="🕵️‍♀️ Search for an item to use Item Manager! 🕵️‍♀️" />
-        }
+        <SearchQueriesContext.Provider value={{ queries: queries, setQueries: setQueries }}>
+          <ItemsService />
+          <Header />
+          <Search searchMode="regular" />
+          {
+            items.filter((item) => { return item.isInSearchQuery }).length >= 1 ?
+              <ItemList /> :
+              <EmptyList message={message} />
+          }
+        </SearchQueriesContext.Provider>
       </ItemsContext.Provider>
     </div>
   )

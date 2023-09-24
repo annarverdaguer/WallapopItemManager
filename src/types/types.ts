@@ -18,3 +18,14 @@ export type SortingCriteriaType = {
     email: string;
 }
 
+export type SearchModeType = "regular" | "favorite";
+
+export type QueriesType = {
+    regular: string,
+    favorite: string
+}
+export type SearchQueriesContextType = {
+    queries: QueriesType,
+    setQueries: Function
+}
+

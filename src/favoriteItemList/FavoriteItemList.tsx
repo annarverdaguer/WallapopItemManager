@@ -1,31 +1,22 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { ItemsContext } from '../contexts/ItemsContext';
 import FavoriteItem from '@/favoriteItem/FavoriteItem';
 import EmptyList from '@/emptyList/EmptyList';
+import Search from '@/search/Search';
+import { SearchQueriesContext } from '@/contexts/SearchQueriesContext';
 
 export default function FavoriteItemList() {
-    const { items, setItems } = useContext(ItemsContext)
-    const [searchQuery, setSearchQuery] = useState("")
+    const { items } = useContext(ItemsContext)
+    const { queries } = useContext(SearchQueriesContext)
 
     const favItemsList = items.filter(item => { return item.isFav });
     const filteredFavItemsList = items.filter(item => { return item.isFav && item.isInFavSearchQuery });
-
-    const searchFavorites = (event: { target: { value: any; }; }) => {
-        let currentSearchQuery = event.target.value.toLowerCase()
-        setSearchQuery(currentSearchQuery);
-        const updatedItems = items.map(item => {
-            let bool = false;
-            if (item.title.toLowerCase().includes(currentSearchQuery) && currentSearchQuery.length > 0) { bool = true }
-            return { ...item, isInFavSearchQuery: bool };
-        });
-        setItems(updatedItems)
-    }
 
     function renderSearchedFavoriteItems() {
         if (filteredFavItemsList.length > 0) {
             return filteredFavItemsList.map((item, key) => <FavoriteItem title={item.title} image={item.image} key={key} />)
         }
-        if (searchQuery === "") {
+        if (queries.favorite === "") {
             return favItemsList.map((item, key) => <FavoriteItem title={item.title} image={item.image} key={key} />)
         }
         return (<EmptyList message="None of your favorite items are matching this query :(" />)
@@ -40,15 +31,7 @@ export default function FavoriteItemList() {
     }
     return (
         <div className="favorite-item-list" >
-            <div className="search">
-                <input
-                    className='search-bar'
-                    type='search'
-                    placeholder='Type to search...'
-                    inputMode='search'
-                    name='search'
-                    onChange={searchFavorites} />
-            </div>
+            <Search searchMode="favorite" />
             {renderSearchedFavoriteItems()}
         </div>
     )
