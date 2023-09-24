@@ -1,4 +1,4 @@
-import FavoriteItemList from '@/favoriteItemList/FavoriteItemList';
+import FavoriteItemList from '@/components/favoriteItemList/FavoriteItemList';
 
 interface IModalProps {
     isOpen: boolean;

@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { ItemsContext } from '../contexts/ItemsContext';
+import { ItemsContext } from '../../contexts/ItemsContext';
 
 interface FavItemProps {
     title: string,

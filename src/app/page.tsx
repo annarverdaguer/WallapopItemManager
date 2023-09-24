@@ -4,10 +4,10 @@ import './globals.css';
 import { ItemsContext } from '../contexts/ItemsContext';
 import ItemsService from '../service/ItemsService';
 import { ItemType } from '../types/types';
-import Search from '../search/Search';
-import ItemList from '../itemList/ItemList';
-import Header from '@/header/Header';
-import EmptyList from '@/emptyList/EmptyList';
+import Search from '../components/search/Search';
+import ItemList from '../components/itemList/ItemList';
+import Header from '@/components/header/Header';
+import EmptyList from '@/components/emptyList/EmptyList';
 import { SearchQueriesContext } from '@/contexts/SearchQueriesContext';
 
 export default function Home() {

@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { ItemContextType, SearchQueriesContextType } from "../types/types";
+import { SearchQueriesContextType } from "../types/types";
 
 const SearchQueriesDefaults: SearchQueriesContextType = {
     queries: {

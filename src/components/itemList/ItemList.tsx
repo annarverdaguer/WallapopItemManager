@@ -3,7 +3,7 @@ import Item from '../item/Item';
 import { ItemsContext } from '@/contexts/ItemsContext';
 import { ITEM_FILTER_PARAMS } from '@/constants';
 import { ItemType, SortingCriteriaType } from '@/types/types';
-import Paginate from '@/pagination/Paginate';
+import Paginate from '@/components/pagination/Paginate';
 
 export default function ItemList() {
     const { items } = useContext(ItemsContext)

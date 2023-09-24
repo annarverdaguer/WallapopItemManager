@@ -1,6 +1,6 @@
 import { useContext } from 'react';
-import { ItemsContext } from '../contexts/ItemsContext';
-import { ITEM_FILTER_PARAMS } from '../constants';
+import { ItemsContext } from '@/contexts/ItemsContext';
+import { ITEM_FILTER_PARAMS } from '@/constants';
 import { SearchModeType } from '@/types/types';
 import { SearchQueriesContext } from '@/contexts/SearchQueriesContext';
 

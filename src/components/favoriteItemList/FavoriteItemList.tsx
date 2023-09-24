@@ -1,8 +1,8 @@
 import { useContext } from 'react';
-import { ItemsContext } from '../contexts/ItemsContext';
-import FavoriteItem from '@/favoriteItem/FavoriteItem';
-import EmptyList from '@/emptyList/EmptyList';
-import Search from '@/search/Search';
+import { ItemsContext } from '../../contexts/ItemsContext';
+import FavoriteItem from '@/components/favoriteItem/FavoriteItem';
+import EmptyList from '@/components/emptyList/EmptyList';
+import Search from '@/components/search/Search';
 import { SearchQueriesContext } from '@/contexts/SearchQueriesContext';
 
 export default function FavoriteItemList() {
