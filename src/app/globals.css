@@ -3,7 +3,6 @@
 @import "../components/search/Search.css";
 @import "../components/itemList/ItemList.css";
 @import "../components/item/Item.css";
-@import "../components/favoriteItem/FavoriteItem.css";
 @import "../components/modal/Modal.css";
 @import "../components/pagination/Paginate.css";
 @import "../components/emptyList/EmptyList.css";

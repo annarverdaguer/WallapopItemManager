@@ -4,10 +4,11 @@ import { ItemsContext } from '../../contexts/ItemsContext';
 
 interface ItemProps {
     item: ItemType,
+    inModal: boolean,
     key: number
 }
 
-export default function Item({ item }: ItemProps) {
+export default function Item({ item, inModal }: ItemProps) {
     const items = useContext(ItemsContext)
     const { title, description, price, email, image, isFav } = item;
 
@@ -21,6 +22,15 @@ export default function Item({ item }: ItemProps) {
         items.setItems(updatedItems)
     }
 
+    if (inModal) {
+        return (
+            <div className="favorite-item-card">
+                <img src={image} alt={title} className="favorite-item-image" />
+                <h3 className='favorite-item-title'>{title}</h3>
+                <a className='favorite-item-unfavorite' onClick={() => updateFavParam(false)}>💔</a>
+            </div>
+        )
+    }
     return (
         <div className="item-card">
             <div className='item-image-wrapper'>

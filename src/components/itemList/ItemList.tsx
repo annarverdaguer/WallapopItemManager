@@ -27,7 +27,7 @@ export default function ItemList() {
             sortedItems = sortBy(items, sortingCriteria);
         }
         const paginatedAndSortedItems = sortedItems.slice(indexOfFirstPost, indexOfLastPost);
-        return paginatedAndSortedItems.map((item: ItemType, key) => <Item item={item} key={key} />)
+        return paginatedAndSortedItems.map((item: ItemType, key) => <Item item={item} key={key} inModal={false} />)
     }
 
     function paginate(pageNUmber: number) {
