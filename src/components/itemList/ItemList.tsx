@@ -1,9 +1,10 @@
 import { useContext, useState } from 'react';
 import Item from '../item/Item';
 import { ItemsContext } from '@/contexts/ItemsContext';
-import { ITEM_FILTER_PARAMS } from '@/constants';
 import { ItemType, SortingCriteriaType } from '@/types/types';
 import Paginate from '@/components/pagination/Paginate';
+import SortingBar from '../sortingBar/SortingBar';
+import sortBy from '@/utils/sort';
 
 export default function ItemList() {
     const { items } = useContext(ItemsContext)
@@ -18,22 +19,6 @@ export default function ItemList() {
     function handleClick(param: keyof ItemType) {
         setActiveSortingCriteria(param);
         paginate(1);
-    }
-
-    function sortBy(items: ItemType[], sortingCriteria: keyof SortingCriteriaType) {
-        if (sortingCriteria === 'price') {
-            items.sort((a, b) => parseInt(a.price) - parseInt(b.price))
-        } else {
-            items.sort((a: ItemType, b: ItemType) => a[sortingCriteria].toLowerCase() > b[sortingCriteria].toLowerCase() ? 1 : -1);
-        }
-        return items
-    }
-
-    function renderButtons() {
-        const myButtons = ITEM_FILTER_PARAMS.map((filterParam, key) => {
-            return <button className={activeSortingCriteria === filterParam ? 'button-active' : ''} onClick={() => { handleClick(filterParam) }} key={key}> {filterParam} </button>
-        })
-        return myButtons
     }
 
     function renderSortedItems(items: ItemType[], sortingCriteria?: keyof SortingCriteriaType) {
@@ -55,10 +40,7 @@ export default function ItemList() {
 
     return (
         <div className="item-list">
-            <div className='item-list-sorting-bar'>
-                <p className='item-list-sorting-text'>Sort by:</p>
-                {renderButtons()}
-            </div>
+            <SortingBar activeSortingCriteria={activeSortingCriteria} handleClick={handleClick} />
             <div className='item-list-items'>
                 {renderSortedItems(filteredItems, activeSortingCriteria as keyof SortingCriteriaType)}
             </div>
