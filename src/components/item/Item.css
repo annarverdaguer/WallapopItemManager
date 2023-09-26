@@ -3,8 +3,14 @@
         @apply p-4 m-4 max-w-sm items-center border-2 rounded border-fake-black bg-white flex flex-wrap;
         transition: 0.3s ease-in-out;
     }
+    
+    .favorite-item-card {
+        @apply p-4 mb-2 w-full max-h-24 items-center border-2 rounded border-fake-black bg-white flex flex-wrap align-middle;
+        justify-content: space-between;
+        transition: 0.3s ease-in-out;
+    }
 
-    .item-card:hover {
+    .item-card:hover, .favorite-item-card:hover {
         opacity: 0.9;
         box-shadow: 5px 5px 5px rgba(126, 126, 126, 0.5);
     }
@@ -17,8 +23,17 @@
         @apply rounded mb-2 mx-auto;
     }
 
+    .favorite-item-image {
+        @apply h-16 rounded;
+    }
+
     .item-title {
         @apply text-2xl mt-3 w-8/12;
+        font-weight: 500;
+    }
+
+    .favorite-item-title {
+        @apply text-lg ml-2 mr-auto flex-wrap;
         font-weight: 500;
     }
 
@@ -38,13 +53,24 @@
         cursor: pointer;
     }
 
-    .item-favorite:hover {
+    .favorite-item-unfavorite {
+        @apply ml-2 text-right text-2xl;
+        transition: 0.3s ease-in-out;
+        cursor: pointer;
+    }
+
+    .item-favorite:hover, .favorite-item-unfavorite:hover {
         opacity: 0.9;
     }
 
     @media (max-width: 992px) {
         .item-title {
             @apply text-lg;
+        }
+
+        .favorite-item-title {
+            @apply text-sm;
+            max-width: 60%;
         }
 
         .item-price {

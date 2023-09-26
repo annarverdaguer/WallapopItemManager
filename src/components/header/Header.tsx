@@ -1,4 +1,4 @@
-import Modal from "@/modal/Modal";
+import Modal from "@/components/modal/Modal";
 import { useState } from "react"
 
 export default function Header() {
